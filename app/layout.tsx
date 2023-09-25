@@ -23,9 +23,11 @@ export default function RootLayout({
         <Header />
         <main className={styles.main}>
           <Navbar />
-        {children}
+          <div style={{ padding: "1rem" }}>
+            {children}
+          </div>
         </main>
-        </body>
+      </body>
     </html>
   )
 }

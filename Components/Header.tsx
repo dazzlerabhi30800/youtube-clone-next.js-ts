@@ -10,8 +10,8 @@ export default function Header() {
         <header>
             <Image
                 src="/youtube.png"
-                height={30}
-                width={45}
+                height={25}
+                width={40}
                 alt="youtube"
             />
             <form>
