@@ -52,12 +52,16 @@ form>input:focus {
 
 
 button {
+    outline: none;
     border: none;
     background: none;
+}
+
+
+form>button {
     padding: 8px 15px;
     border-radius: 0 30px 30px 0;
     background: #3f4040;
-    outline: none;
 }
 
 
@@ -65,10 +69,13 @@ button {
 /* Navbar */
 nav {
     height: 100%;
+    position: absolute;
+    transform: translateX(-500px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background: #141428;
+    transition: 0.3s linear;
 }
 
 .nav--link {
@@ -92,13 +99,10 @@ nav {
         background: #7a797978;
     }
 
-    button:hover {
+    form>button:hover {
         background: rgb(33, 33, 34);
     }
 
-    button:hover .search--btn {
-        color: #f56ddc;
-    }
 }
 
 
