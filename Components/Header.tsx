@@ -1,16 +1,23 @@
+"use client";
 import styles from '@/app/page.module.css';
 import { BsSearch } from 'react-icons/bs';
 import { BiBell } from 'react-icons/bi';
-import { AiOutlineVideoCamera, AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineVideoCamera, AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 
 import Image from "next/image";
+import { useStore } from '@/context/store';
 
 export default function Header() {
+    const { showMenu, handleMenu } = useStore();
     return (
         <header>
             <div className={styles.logoDiv}>
-                <button className={styles.hamburgerBtn}>
-                    <AiOutlineMenu />
+                <button onClick={handleMenu} className={styles.hamburgerBtn}>
+                    {showMenu ?
+                        <AiOutlineClose />
+                        :
+                        <AiOutlineMenu />
+                    }
                 </button>
                 <Image
                     src="/youtube.png"

@@ -28,7 +28,7 @@ header {
 
 form {
     display: flex;
-    width: clamp(auto, 50%, 400px);
+    width: clamp(100px, 50%, 400px);
     align-items: center;
     justify-content: space-between;
     flex: 1;
@@ -39,7 +39,7 @@ form {
 
 form>input {
     padding: 8px 12px;
-    font-size: 1rem;
+    font-size: clamp(0.75rem, 2vw, 1rem);
     background: transparent;
     border: none;
     color: #fff;
@@ -78,6 +78,10 @@ nav {
     transition: 0.3s linear;
 }
 
+nav.show {
+    transform: translateX(0px);
+}
+
 .nav--link {
     color: #fff;
     display: flex;
@@ -88,6 +92,10 @@ nav {
     padding: 1rem;
     text-decoration: none;
     transition: 0.3s linear;
+}
+
+.nav--link.active {
+    background: #7a797978;
 }
 
 @media (hover:hover) {
@@ -109,6 +117,11 @@ nav {
 @media Screen and (min-width: 750px) {
     header {
         gap: 0;
+    }
+
+    nav {
+        transform: translateX(0);
+        position: static;
     }
 
     form {
