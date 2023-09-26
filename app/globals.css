@@ -248,10 +248,10 @@ nav.show {
         gap: 0;
     }
 
-    nav {
+    /* nav {
         transform: translateX(0);
         position: static;
-    }
+    } */
 
     form {
         width: clamp(250px, 60%, 450px);
