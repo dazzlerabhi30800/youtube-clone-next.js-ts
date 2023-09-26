@@ -5,6 +5,11 @@
 }
 
 
+a {
+    text-decoration: none;
+}
+
+
 body {
     min-height: 100vh;
     background: linear-gradient(45deg, #201636, rgb(19, 12, 10));

@@ -6,9 +6,23 @@ import { AiOutlineVideoCamera, AiOutlineMenu, AiOutlineClose } from 'react-icons
 
 import Image from "next/image";
 import { useStore } from '@/context/store';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Header() {
     const { showMenu, handleMenu } = useStore();
+    const [searchString, setSearchString] = useState('');
+    const router = useRouter();
+
+
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (searchString === '') return;
+        router.push(`/${searchString}`);
+        setSearchString('');
+    }
+
     return (
         <header>
             <div className={styles.logoDiv}>
@@ -26,8 +40,8 @@ export default function Header() {
                     alt="youtube"
                 />
             </div>
-            <form>
-                <input type="text" placeholder="Enter your search" />
+            <form onSubmit={handleSubmit}>
+                <input value={searchString} onChange={(e) => setSearchString(e.target.value)} type="text" placeholder="Enter your search" />
                 <button className={styles.searchBtn}>
                     <BsSearch />
                 </button>
