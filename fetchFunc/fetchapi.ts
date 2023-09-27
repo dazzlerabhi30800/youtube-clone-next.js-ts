@@ -19,6 +19,13 @@ export const fetchFunc = async(endpoint: string) => {
 }
 
 
+export const fetchVideoDetail = async(id: string) => {
+  let response = await fetch(`${url}/video/details/?id=${id}&hl=en&gl=US`, options);
+  let result = await response.json();
+  return result;
+}
+
+
 export function formatViews(views: number) {
   if (views >= 1000 && views < 1000000) {
     return Math.ceil(views / 1000) + "K";

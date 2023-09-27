@@ -76,6 +76,7 @@ nav {
     height: 100%;
     position: absolute;
     transform: translateX(-500px);
+    z-index: 44;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
